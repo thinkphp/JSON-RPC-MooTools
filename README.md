@@ -23,11 +23,11 @@ The JSON-RPC setup has two parts: configuration and call.
 
 The above code creates a client JSON-RPC object, that is bound to remote ``bubblesort`` method. This binding allows us to call the remote method passing only parameters and callback, without repeating the method multiple times:
 
-   myClientRPC.send({params: [9,8,7,6,5,4,3,2,1], 
-                     onSuccess: function(resp){
-                            if(window.console) {console.log(resp.result);}
-                     }
-   }); 
+       myClientRPC.send({params: [9,8,7,6,5,4,3,2,1], 
+           onSuccess: function(resp){
+                 if(window.console) {console.log(resp.result);}
+           }
+       }); 
 
 ### Options:
 
