@@ -11,7 +11,7 @@ JSON-RPC Specifications: [http://json-rpc.org/wiki/specification](http://json-rp
 
 ## How to Use:
  
-   The JSON-RPC setup has two parts: configuration and call.
+The JSON-RPC setup has two parts: configuration and call.
 
    var myClientRPC = new JSONRPC({
        url: 'http://localhost/jsonrpcphp/server.php',
@@ -21,7 +21,7 @@ JSON-RPC Specifications: [http://json-rpc.org/wiki/specification](http://json-rp
        }   
    });
 
-   The above code creates a client JSON-RPC object, that is bound to remote ``bubblesort`` method. This binding allows us to call the remote method passing only parameters and callback, without repeating the method multiple times:
+The above code creates a client JSON-RPC object, that is bound to remote ``bubblesort`` method. This binding allows us to call the remote method passing only parameters and callback, without repeating the method multiple times:
 
    myClientRPC.send({params: [9,8,7,6,5,4,3,2,1], 
                      onSuccess: function(resp){
@@ -51,6 +51,7 @@ Options for JSON-RPC configuration are as follows:
 
 You send JSON-RPC requests using ``send`` method. This function takes a single object as argument. If any of the object properties matches the one specified in the configuration, it will override the 
 configuration. The object can have the following properties:
+
 * ``method``: __String__ the remote method name.
 * ``params``: __Array__ or __Object__ parameters to pass to remote method.
 * ``id``: The JSON_RPC id.
