@@ -1,7 +1,7 @@
 JSON-RPC plugin for MooTools
 -----------------------------
 
-JSON-RPC is a lightweight remote procedure call protocol similar to XML-RPC. It's designedto be simple!
+JSON-RPC is a lightweight remote procedure call protocol similar to ``XML-RPC``.It's designed to be simple!
 The general mechanism consists of two peers establishing a data connection. During the lifetime of a connection, peers invoke methods provided by the othe peer. To invoke a remote method, o request is sent.
 
 This plugin implements the ``JSONRPC`` class with a ``send`` function can be used for performing [JSON-RPC](http://json-rpc.org/) calls.
@@ -13,13 +13,13 @@ JSON-RPC Specifications: [http://json-rpc.org/wiki/specification](http://json-rp
  
 The JSON-RPC setup has two parts: configuration and call.
 
-   var myClientRPC = new JSONRPC({
-       url: 'http://localhost/jsonrpcphp/server.php',
-       methodname: 'bubblesort',
-       onSuccess: function(resp) {
-               console.log(resp.result);
-       }   
-   });
+      var myClientRPC = new JSONRPC({
+          url: 'http://localhost/jsonrpcphp/server.php',
+          methodname: 'bubblesort',
+          onSuccess: function(resp) {
+                console.log(resp.result);
+          }   
+      });
 
 The above code creates a client JSON-RPC object, that is bound to remote ``bubblesort`` method. This binding allows us to call the remote method passing only parameters and callback, without repeating the method multiple times:
 
