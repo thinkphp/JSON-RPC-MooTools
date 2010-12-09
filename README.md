@@ -14,7 +14,7 @@ JSON-RPC Specifications: [http://json-rpc.org/wiki/specification](http://json-rp
 The JSON-RPC setup has two parts: configuration and call.
 
       var myClientRPC = new JSONRPC({
-          url: 'http://localhost/jsonrpcphp/server.php',
+          url: 'path2server',
           methodname: 'bubblesort',
           onSuccess: function(resp) {
                 console.log(resp.result);
@@ -40,6 +40,8 @@ Options for JSON-RPC configuration are as follows:
 * ``headers`` (*String*) Request headers. Passed through to ``Request.JSON``.
 
 ### Events:
+
+The JSONRPC class has four events and you can specify the matching callbacks.
 
 * ``success`` | ``onSuccess`` (*Function*) this event is fired when the JSON-RPC call is finished, and the ID is returned from the server matches the one used in the request.
 * ``failure`` | ``onFailure`` (*Function*) this event is fired when the HTTP request fails. This event does not signify that the actual RPC call failed. For the RPC failure use the ``idMismatch`` and ``remoteFailure``.
