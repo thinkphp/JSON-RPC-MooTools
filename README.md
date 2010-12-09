@@ -1,5 +1,5 @@
-JSON-RPC plugin for MooTools
------------------------------
+Plugin JSONRPC - Implementation of the JSON-RPC protocol client in MooTools
+---------------------------------------------------------------------------
 
 JSON-RPC is a lightweight remote procedure call protocol similar to ``XML-RPC``.It's designed to be simple!
 The general mechanism consists of two peers establishing a data connection. During the lifetime of a connection, peers invoke methods provided by the othe peer. To invoke a remote method, o request is sent.
