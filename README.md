@@ -33,18 +33,18 @@ The above code creates a client JSON-RPC object, that is bound to remote ``bubbl
 
 Options for JSON-RPC configuration are as follows:
 
-* ``url``: __String__ The URL of the JSON-RPC service. Defaults to ``/``.
-* ``methodname``: __String__ The name of the remote method. Defaults to ``null``. This option is not required, it can be specified later using ``send`` method.
-* ``params``: __Array__ or __Object__ Either a vector of parameters, or an object containing the parameters that will be passed to the remote method. This options is optional (not mandatory).
-* ``encoding``: __String__ Encoding scheme. It is passed through to ``Request.JSON``. 
-* ``headers``: __String__ Request headers. Passed through to ``Request.JSON``.
+* ``url`` (*String*) The URL of the JSON-RPC service. Defaults to ``/``.
+* ``methodname`` (*String*) The name of the remote method. Defaults to ``null``. This option is not required, it can be specified later using ``send`` method.
+* ``params`` (*Array*) or (*Object*) Either a vector of parameters, or an object containing the parameters that will be passed to the remote method. This options is optional (not mandatory).
+* ``encoding`` (*String*) Encoding scheme. It is passed through to ``Request.JSON``. 
+* ``headers`` (*String*) Request headers. Passed through to ``Request.JSON``.
 
 ### Events:
 
-* ``success``: __Function__ this event is fired when the JSON-RPC call is finished, and the ID is returned from the server matches the one used in the request.
-* ``failure``: __Function__ this event is fired when the HTTP request fails. This event does not signify that the actual RPC call failed. For the RPC failure use the ``idMismatch`` and ``remoteFailure``.
-* ``remoteFailure``: __Function__ this event is fired when the remote method raises an exception. Only the ``error`` key of the complete response  is returned.
-* ``idMismatch``: __Function__ this event is fired when the JSON-RPC ID returned by the server does not match the one sent by client JSONRPC call. Thus, the complete ``response`` object is passed to the callback function, it would probably by unwise to treat it as safe.
+* ``success`` (*Function*) this event is fired when the JSON-RPC call is finished, and the ID is returned from the server matches the one used in the request.
+* ``failure`` (*Function*) this event is fired when the HTTP request fails. This event does not signify that the actual RPC call failed. For the RPC failure use the ``idMismatch`` and ``remoteFailure``.
+* ``remoteFailure`` (*Function*) this event is fired when the remote method raises an exception. Only the ``error`` key of the complete response  is returned.
+* ``idMismatch`` (*Function*) this event is fired when the JSON-RPC ID returned by the server does not match the one sent by client JSONRPC call. Thus, the complete ``response`` object is passed to the callback function, it would probably by unwise to treat it as safe.
 
 
 ### Sending requests:
