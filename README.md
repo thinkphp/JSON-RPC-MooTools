@@ -52,11 +52,11 @@ Options for JSON-RPC configuration are as follows:
 You send JSON-RPC requests using ``send`` method. This function takes a single object as argument. If any of the object properties matches the one specified in the configuration, it will override the 
 configuration. The object can have the following properties:
 
-* ``method``: __String__ the remote method name.
-* ``params``: __Array__ or __Object__ parameters to pass to remote method.
-* ``id``: The JSON_RPC id.
-* ``onSuccess``: __Function__ this event is fired when the JSON-RPC call is finished, and the ID is returned from the server matches the one used in the request.
-* ``onFailure``: __Function__ this event is fired when the HTTP request fails. This event does not signify that the actual RPC call failed. For the RPC failure use the ``idMismatch`` and ``remoteFailure``.
-* ``onRemoteFailure``: __Function__ this event is fired when the remote method raises an exception. Only the ``error`` key of the complete response  is returned.
-* ``onIdMismatch``: __Function__ this event is fired when the JSON-RPC ID returned by the server does not match the one sent by client JSONRPC call. Thus, the complete ``response`` object is passed to the callback function, it would probably by unwise to treat it as safe.
+* ``method`` (*String*) the remote method name.
+* ``params`` (*Array*) or (*Object*) parameters to pass to remote method.
+* ``id`` (*String*) or (*int*) or (*mixed*) the JSON-RPC unique ID.
+* ``onSuccess`` (*Function*) this event is fired when the JSON-RPC call is finished, and the ID is returned from the server matches the one used in the request.
+* ``onFailure`` (*Function*) this event is fired when the HTTP request fails. This event does not signify that the actual RPC call failed. For the RPC failure use the ``idMismatch`` and ``remoteFailure``.
+* ``onRemoteFailure`` (*Function*) this event is fired when the remote method raises an exception. Only the ``error`` key of the complete response  is returned.
+* ``onIdMismatch`` (*Function*) this event is fired when the JSON-RPC ID returned by the server does not match the one sent by client JSONRPC call. Thus, the complete ``response`` object is passed to the callback function, it would probably by unwise to treat it as safe.
 Note that specifying callback functions when calling ``send`` will not only override the configured callbacks, but also prevent the events from being fired, as anything listening to the events will not be able to catch them.
