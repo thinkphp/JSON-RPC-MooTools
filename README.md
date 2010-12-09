@@ -41,10 +41,10 @@ Options for JSON-RPC configuration are as follows:
 
 ### Events:
 
-* ``success`` (*Function*) this event is fired when the JSON-RPC call is finished, and the ID is returned from the server matches the one used in the request.
-* ``failure`` (*Function*) this event is fired when the HTTP request fails. This event does not signify that the actual RPC call failed. For the RPC failure use the ``idMismatch`` and ``remoteFailure``.
-* ``remoteFailure`` (*Function*) this event is fired when the remote method raises an exception. Only the ``error`` key of the complete response  is returned.
-* ``idMismatch`` (*Function*) this event is fired when the JSON-RPC ID returned by the server does not match the one sent by client JSONRPC call. Thus, the complete ``response`` object is passed to the callback function, it would probably by unwise to treat it as safe.
+* ``success`` | ``onSuccess`` (*Function*) this event is fired when the JSON-RPC call is finished, and the ID is returned from the server matches the one used in the request.
+* ``failure`` | ``onFailure`` (*Function*) this event is fired when the HTTP request fails. This event does not signify that the actual RPC call failed. For the RPC failure use the ``idMismatch`` and ``remoteFailure``.
+* ``remoteFailure`` | ``onRemoteFailure`` (*Function*) this event is fired when the remote method raises an exception. Only the ``error`` key of the complete response  is returned.
+* ``idMismatch`` | ``onIdMismatch``(*Function*) this event is fired when the JSON-RPC ID returned by the server does not match the one sent by client JSONRPC call. Thus, the complete ``response`` object is passed to the callback function, it would probably by unwise to treat it as safe.
 
 
 ### Sending requests:
